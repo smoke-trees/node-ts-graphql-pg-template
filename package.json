@@ -1,0 +1,74 @@
+{
+  "name": "template-ts",
+  "version": "1.0.0",
+  "description": "GraphQL node-ts pg-typeorm template for backend",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "npm run lint && tsc",
+    "build-nolint": "tsc",
+    "test": " mocha -r ts-node/register --file src/tests/* --file src/tests/setup/after.test.ts",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "start": "node dist/server.js",
+    "lint": "standardx **/*.ts --fix",
+    "coverage": "tsc && nyc --reporter=lcov npm run test && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smoke-trees/node-ts-graphql-pg-template"
+  },
+  "keywords": [
+    "nodejs",
+    "template",
+    "typescript"
+  ],
+  "author": "SmokeTrees",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smoke-trees/node-ts-graphql-pg-template/issues"
+  },
+  "homepage": "https://github.com/smoke-trees/node-ts-graphql-pg-template#readme",
+  "eslintConfig": {
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error"
+    }
+  },
+  "standardx": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint/eslint-plugin"
+    ]
+  },
+  "dependencies": {
+    "@smoke-trees/smoke-context": "^1.1.11",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "aes-psswd": "^1.1.3",
+    "apollo-server-express": "^3.5.0",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "cls-rtracer": "^2.6.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^16.0.1",
+    "graphql-tools": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^9.1.3",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "redis": "^3.1.2",
+    "standardx": "^7.0.0",
+    "ts-node": "^10.4.0",
+    "typeorm": "^0.2.41",
+    "typescript": "^4.5.2",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.2",
+    "@types/jsonwebtoken": "^8.5.6",
+    "@types/mocha": "^9.0.0",
+    "@types/morgan": "^1.9.3",
+    "nodemon": "^2.0.15"
+  }
+}
